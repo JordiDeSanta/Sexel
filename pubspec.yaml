@@ -52,9 +52,11 @@ flutter:
     - family: Sweet
       fonts:
         - asset: assets/fonts/Sweet.ttf
+        
     - family: Coolvetica
       fonts:
         - asset: assets/fonts/Coolvetica.ttf
+
     - family: Uniflex
       fonts:
         - asset: assets/fonts/Uniflex.ttf

@@ -24,6 +24,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
         primaryColor: Colors.red.shade200,
+        iconTheme: IconThemeData(color: Colors.white, size: 25),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            elevation: MaterialStateProperty.all(0.0),
+            backgroundColor: MaterialStateProperty.all(Colors.red[200]),
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            ),
+          ),
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.red[200],
+          centerTitle: true,
+          elevation: 0.0,
+        ),
+        textTheme: Theme.of(context).primaryTextTheme,
         primaryTextTheme: TextTheme(
           headline6: TextStyle(
             color: Colors.white,
@@ -32,8 +48,13 @@ class MyApp extends StatelessWidget {
           ),
           headline2: TextStyle(
             color: Colors.black,
-            fontSize: 20,
-            fontFamily: 'Sweet',
+            fontSize: 16,
+            fontFamily: 'Coolvetica',
+          ),
+          button: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontFamily: 'Uniflex',
           ),
         ),
       ),
