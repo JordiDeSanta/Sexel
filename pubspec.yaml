@@ -55,6 +55,9 @@ flutter:
     - family: Coolvetica
       fonts:
         - asset: assets/fonts/Coolvetica.ttf
+    - family: Uniflex
+      fonts:
+        - asset: assets/fonts/Uniflex.ttf
 
 
   #

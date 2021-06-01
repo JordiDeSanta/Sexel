@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Text(
         'Wena po ctm',
-        style: Theme.of(context).textTheme.caption,
+        style: Theme.of(context).primaryTextTheme.headline2,
       ),
     );
   }

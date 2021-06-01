@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
             fontSize: 50,
             fontFamily: 'Sweet',
           ),
-          caption: TextStyle(
+          headline2: TextStyle(
             color: Colors.black,
-            fontSize: 12,
-            fontFamily: 'Coolvetica',
+            fontSize: 20,
+            fontFamily: 'Sweet',
           ),
         ),
       ),
