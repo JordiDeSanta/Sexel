@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           ),
           button: TextStyle(
             color: Colors.white,
-            fontSize: 16,
+            fontSize: 20,
             fontFamily: 'Uniflex',
           ),
         ),
