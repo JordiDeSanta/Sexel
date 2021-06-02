@@ -1,12 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:provider/provider.dart';
+import 'package:sexel/src/pages/bot_page.dart';
 import 'package:sexel/src/providers/ui_state.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
+    final uiState = Provider.of<UiProvider>(context);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -15,6 +23,12 @@ class HomePage extends StatelessWidget {
         toolbarHeight: h * 0.1,
       ),
       bottomNavigationBar: GNav(
+        onTabChange: (i) {
+          setState(() {
+            uiState.selectedMenuOpt = i;
+          });
+        },
+        selectedIndex: uiState.selectedMenuOpt,
         textStyle: Theme.of(context).primaryTextTheme.button,
         rippleColor:
             Colors.red.shade200, // tab button ripple color when pressed
@@ -54,6 +68,22 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
+      body: _body(context),
     );
+  }
+
+  Widget _body(BuildContext context) {
+    final uiState = Provider.of<UiProvider>(context);
+
+    switch (uiState.selectedMenuOpt) {
+      case 0:
+        return BotPage();
+        break;
+      case 1:
+        return Container();
+        break;
+      default:
+        return Container();
+    }
   }
 }
