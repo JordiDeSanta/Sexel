@@ -1,6 +1,6 @@
-import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -17,38 +17,45 @@ class HomePage extends StatelessWidget {
         'Test Téxt',
         style: Theme.of(context).primaryTextTheme.headline2,
       ),
-      bottomNavigationBar: Row(
-        children: [
-          _createButton(context, true, Icons.android, 'Xelbot'),
-        ],
-      ),
-    );
-  }
-
-  Widget _createButton(
-      BuildContext context, bool bInPage, IconData icon, String title) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      child: ElevatedButton(
-        onPressed: () {},
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          height: 80,
-          child: Row(
-            children: [
-              Icon(icon),
-              if (bInPage)
-                Container(
-                  padding: EdgeInsets.only(left: 5),
-                  child: Text(
-                    title,
-                    style: Theme.of(context).primaryTextTheme.button,
-                  ),
-                ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: GNav(
+          textStyle: Theme.of(context).primaryTextTheme.button,
+          rippleColor:
+              Colors.red.shade200, // tab button ripple color when pressed
+          hoverColor: Colors.red.shade300, // tab button hover color
+          haptic: true, // haptic feedback
+          tabBorderRadius: 15,
+          tabActiveBorder: Border.all(
+              color: Colors.red.shade300, width: 1), // tab button border
+          tabBorder:
+              Border.all(color: Colors.grey, width: 1), // tab button border
+          curve: Curves.easeOutExpo, // tab animation curves
+          duration: Duration(milliseconds: 900), // tab animation duration
+          gap: 8, // the tab button gap between icon and text
+          color: Colors.red.shade200, // unselected icon color
+          activeColor: Colors.white, // selected icon and text color
+          iconSize: 24, // tab button icon size
+          tabBackgroundColor:
+              Colors.red.shade200, // selected tab background color
+          padding: EdgeInsets.symmetric(
+              horizontal: 20, vertical: 5), // navigation bar padding
+          tabs: [
+            GButton(
+              icon: Icons.android,
+              text: 'Xelbot',
+            ),
+            GButton(
+              icon: Icons.book,
+              text: 'Aprende',
+            ),
+            GButton(
+              icon: Icons.question_answer,
+              text: 'Pregunta',
+            ),
+            GButton(
+              icon: Icons.bookmark,
+              text: 'Guardado',
+            )
+          ]),
     );
   }
 }
