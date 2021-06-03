@@ -57,7 +57,6 @@ class MyApp extends StatelessWidget {
             centerTitle: true,
             elevation: 0.0,
           ),
-          textTheme: Theme.of(context).primaryTextTheme,
           primaryTextTheme: TextTheme(
             headline6: TextStyle(
               color: Colors.white,

@@ -10,14 +10,34 @@ class _BotPageState extends State<BotPage> {
   Widget build(BuildContext context) {
     print('xelvooo');
     return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        ElevatedButton(
-          onPressed: () {},
-          child: Container(
-            height: 100,
-            width: 100,
+        Card(
+          clipBehavior: Clip.antiAlias,
+          elevation: 0.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
-        )
+          child: Container(
+            padding: EdgeInsets.all(10),
+            color: Colors.red[50],
+            height: 200,
+            width: 300,
+            child: Text(
+              'Notificaciones de pana',
+              style: Theme.of(context).primaryTextTheme.headline2,
+            ),
+          ),
+        ),
+        Container(
+          height: 300,
+          child: Image(
+            image: AssetImage('assets/img/xelbot.png'),
+          ),
+        ),
+        Container(
+          height: 50,
+        ),
       ],
     );
   }
