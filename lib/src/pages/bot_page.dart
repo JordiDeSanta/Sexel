@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sexel/src/widgets/notification.dart';
 
 class BotPage extends StatefulWidget {
   @override
@@ -23,9 +24,16 @@ class _BotPageState extends State<BotPage> {
             color: Colors.red[50],
             height: 200,
             width: 300,
-            child: Text(
-              'Notificaciones de pana',
-              style: Theme.of(context).primaryTextTheme.headline2,
+            child: Column(
+              children: [
+                Text(
+                  'Notificaciones',
+                  style: Theme.of(context).primaryTextTheme.headline3,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10),
+                AppNotification(),
+              ],
             ),
           ),
         ),
@@ -35,9 +43,7 @@ class _BotPageState extends State<BotPage> {
             image: AssetImage('assets/img/xelbot.png'),
           ),
         ),
-        Container(
-          height: 50,
-        ),
+        Container(height: 50),
       ],
     );
   }

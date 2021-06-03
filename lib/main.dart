@@ -68,6 +68,11 @@ class MyApp extends StatelessWidget {
               fontSize: 16,
               fontFamily: 'Coolvetica',
             ),
+            headline3: TextStyle(
+              color: Colors.redAccent,
+              fontSize: 24,
+              fontFamily: 'Coolvetica',
+            ),
             button: TextStyle(
               color: Colors.white,
               fontSize: 20,
