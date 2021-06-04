@@ -24,7 +24,7 @@ class _BotPageState extends State<BotPage> {
             color: Colors.red[50],
             height: 200,
             width: 300,
-            child: Column(
+            child: ListView(
               children: [
                 Text(
                   'Notificaciones',
@@ -32,6 +32,9 @@ class _BotPageState extends State<BotPage> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 10),
+                AppNotification(),
+                AppNotification(),
+                AppNotification(),
                 AppNotification(),
               ],
             ),

@@ -63,14 +63,14 @@ class MyApp extends StatelessWidget {
               fontSize: 50,
               fontFamily: 'Sweet',
             ),
-            headline2: TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontFamily: 'Coolvetica',
-            ),
             headline3: TextStyle(
               color: Colors.redAccent,
               fontSize: 24,
+              fontFamily: 'Coolvetica',
+            ),
+            headline2: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
               fontFamily: 'Coolvetica',
             ),
             button: TextStyle(
