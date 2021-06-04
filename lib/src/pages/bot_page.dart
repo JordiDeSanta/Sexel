@@ -9,7 +9,6 @@ class BotPage extends StatefulWidget {
 class _BotPageState extends State<BotPage> {
   @override
   Widget build(BuildContext context) {
-    print('xelvooo');
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
