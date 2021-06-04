@@ -30,7 +30,10 @@ class CircleButton extends StatelessWidget {
         ),
         Text(
           name,
-          style: Theme.of(context).primaryTextTheme.headline2,
+          style: Theme.of(context)
+              .primaryTextTheme
+              .headline2
+              ?.copyWith(color: Colors.redAccent),
         ),
       ],
     );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sexel/src/pages/bot_page.dart';
+import 'package:sexel/src/pages/community_page.dart';
 import 'package:sexel/src/pages/course_page.dart';
 import 'package:sexel/src/providers/ui_state.dart';
 
@@ -84,7 +85,7 @@ class _HomePageState extends State<HomePage> {
         return CoursePage();
         break;
       case 2:
-        return CoursePage();
+        return CommunityPage();
         break;
       case 3:
         return CoursePage();
