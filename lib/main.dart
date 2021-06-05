@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:sexel/src/pages/home_page.dart';
+import 'package:sexel/src/pages/post_page.dart';
 import 'package:sexel/src/providers/ad_state.dart';
 import 'package:sexel/src/providers/ui_state.dart';
 
@@ -83,6 +84,7 @@ class MyApp extends StatelessWidget {
         initialRoute: 'home',
         routes: {
           'home': (BuildContext context) => HomePage(),
+          'question': (BuildContext context) => PostPage(),
         },
       ),
     );

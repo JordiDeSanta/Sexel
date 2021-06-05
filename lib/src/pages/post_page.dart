@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:sexel/src/models/question_model.dart';
 import 'package:sexel/src/providers/question_provider.dart';
 
-class ProductPage extends StatefulWidget {
+class PostPage extends StatefulWidget {
   @override
-  _ProductPageState createState() => _ProductPageState();
+  _PostPageState createState() => _PostPageState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _PostPageState extends State<PostPage> {
   final formKey = GlobalKey<FormState>();
 
   QuestionModel question = new QuestionModel();
