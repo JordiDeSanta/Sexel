@@ -68,7 +68,7 @@ class _PostPageState extends State<PostPage> {
       decoration: InputDecoration(
         labelText: 'Question',
       ),
-      onSaved: (v) => question.title = v.toString(),
+      onSaved: (v) => question.text = v.toString(),
       validator: (v) {
         return (v.toString().length < 3) ? 'Enter the question' : null;
       },
@@ -86,7 +86,7 @@ class _PostPageState extends State<PostPage> {
         )),
       ),
       icon: Icon(Icons.save),
-      label: Text('Save', style: TextStyle(fontWeight: FontWeight.w300)),
+      label: Text('Postear', style: TextStyle(fontWeight: FontWeight.w300)),
     );
   }
 
