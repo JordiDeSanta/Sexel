@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:sexel/src/models/question_model.dart';
 
-class ProductsProvider {
+class QuestionProvider {
   final String _url = 'https://sexel-5cbc5-default-rtdb.firebaseio.com';
 
   Future<bool> createProduct(QuestionModel question) async {
