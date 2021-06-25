@@ -16,7 +16,8 @@ class _CommunityPageState extends State<CommunityPage> {
       floatingActionButton: FloatingActionButton(
         elevation: 0.0,
         onPressed: () {
-          Navigator.pushNamed(context, 'question');
+          Navigator.pushNamed(context, 'question',
+              arguments: new QuestionModel());
         },
         child: Icon(Icons.add),
         backgroundColor: Colors.red[200],

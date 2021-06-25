@@ -80,16 +80,12 @@ class _HomePageState extends State<HomePage> {
     switch (uiState.selectedMenuOpt) {
       case 0:
         return BotPage();
-        break;
       case 1:
         return CoursePage();
-        break;
       case 2:
         return CommunityPage();
-        break;
       case 3:
         return CoursePage();
-        break;
       default:
         return Container();
     }

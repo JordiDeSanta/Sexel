@@ -107,6 +107,12 @@ class _PostPageState extends State<PostPage> {
 
     if (cS != null) cS.save();
 
-    questionProvider.createProduct(question);
+    if (question.id == null) {
+      questionProvider.createProduct(question);
+    } else {
+      questionProvider.editProduct(question);
+    }
+
+    Navigator.pop(context);
   }
 }
