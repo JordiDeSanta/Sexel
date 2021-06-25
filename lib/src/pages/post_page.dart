@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:sexel/src/models/question_model.dart';
 import 'package:sexel/src/providers/question_provider.dart';
@@ -9,13 +11,21 @@ class PostPage extends StatefulWidget {
 
 class _PostPageState extends State<PostPage> {
   final formKey = GlobalKey<FormState>();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   QuestionModel question = new QuestionModel();
   final questionProvider = new QuestionProvider();
 
   @override
   Widget build(BuildContext context) {
+    final prodData =
+        ModalRoute.of(context)!.settings.arguments as QuestionModel;
+    if (prodData != null) {
+      question = prodData;
+    }
+
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         title: Text('Question'),
         actions: [
@@ -63,7 +73,7 @@ class _PostPageState extends State<PostPage> {
 
   Widget _insertQuestion() {
     return TextFormField(
-      initialValue: question.title,
+      initialValue: question.text,
       textCapitalization: TextCapitalization.sentences,
       decoration: InputDecoration(
         labelText: 'Question',
