@@ -7,16 +7,17 @@ String questionModelToJson(QuestionModel data) => json.encode(data.toJson());
 
 class QuestionModel {
   QuestionModel({
-    this.id = '',
+    this.id,
     this.title = '',
     this.text = '',
   });
 
-  String id;
+  dynamic id;
   String title;
   String text;
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) => QuestionModel(
+        id: json["id"],
         title: json["title"],
         text: json["text"],
       );
