@@ -18,6 +18,8 @@ class _PostPageState extends State<PostPage> {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+
     final prodData =
         ModalRoute.of(context)!.settings.arguments as QuestionModel;
     if (prodData != null) {
@@ -28,16 +30,7 @@ class _PostPageState extends State<PostPage> {
       key: scaffoldKey,
       appBar: AppBar(
         title: Text('Question'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.photo),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.camera_alt),
-            onPressed: () {},
-          ),
-        ],
+        toolbarHeight: h * 0.1,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -48,6 +41,7 @@ class _PostPageState extends State<PostPage> {
               children: [
                 _insertTitle(),
                 _insertQuestion(),
+                SizedBox(height: 10),
                 _createButton(),
               ],
             ),
@@ -66,7 +60,11 @@ class _PostPageState extends State<PostPage> {
       ),
       onSaved: (v) => question.title = v.toString(),
       validator: (v) {
-        return (v.toString().length < 3) ? 'Enter the title' : null;
+        return (v.toString().length < 3)
+            ? 'Enter the title'
+            : (v.toString().length > 50)
+                ? 'Less than 50 characters'
+                : null;
       },
     );
   }
@@ -80,8 +78,14 @@ class _PostPageState extends State<PostPage> {
       ),
       onSaved: (v) => question.text = v.toString(),
       validator: (v) {
-        return (v.toString().length < 3) ? 'Enter the question' : null;
+        return (v.toString().length < 50)
+            ? 'Enter the question'
+            : (v.toString().length > 1000)
+                ? 'Less than 1000 characters'
+                : null;
       },
+      minLines: 2,
+      maxLines: 40,
     );
   }
 
@@ -89,14 +93,12 @@ class _PostPageState extends State<PostPage> {
     return ElevatedButton.icon(
       onPressed: _submit,
       style: ButtonStyle(
-        elevation: MaterialStateProperty.all(0.0),
-        backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
         shape: MaterialStateProperty.all(RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
         )),
       ),
-      icon: Icon(Icons.save),
-      label: Text('Postear', style: TextStyle(fontWeight: FontWeight.w300)),
+      icon: Icon(Icons.question_answer),
+      label: Text('Post', style: TextStyle(fontWeight: FontWeight.w300)),
     );
   }
 
